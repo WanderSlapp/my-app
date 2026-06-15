@@ -5,7 +5,7 @@
     <description>Professional App</description>
     <author email="wonderfordisaac@gmail.com">WanderSlapp</author>
 
-    <content src="index.html" />
+    <content src="www/index.html" />
 
     <!-- SPLASH SCREEN -->
     <icon src="www/icon.png" />
