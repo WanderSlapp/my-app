@@ -1,27 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.wanderslapp.myapp" version="5.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android">
+<widget id="com.wanderslapp.myapp" version="5.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android">
     
     <name>WanderSlapp pro</name>
     <description>Professional App</description>
     <author email="wonderfordisaac@gmail.com">WanderSlapp</author>
 
-    <!-- Tiyesere kuyika https kaye pamwamba apa -->
-    <content src="https://wanderslapp.dpdns.org" />
+    <content src="index.html" />
 
+    <!-- SPLASH SCREEN -->
     <icon src="www/icon.png" />
     <preference name="AndroidWindowSplashScreenBackground" value="#FFFFFF" />
     <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/icon.png" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="AutoHideSplashScreen" value="true" />
 
+   
+
     <platform name="android">
         <preference name="AndroidXEnabled" value="true" />
-        
-        <!-- LAMULO LOLOLA HTTP M'KATI MWA CORDOVA -->
-        <preference name="InsecureFileTransfer" value="true" />
-        <preference name="CleartxtTrafficPermitted" value="true" />
-
-        
         
         <!-- SETUP YA SHARE INTENT -->
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
@@ -38,17 +34,10 @@
             <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
             <uses-permission android:name="android.permission.WAKE_LOCK" />
             <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
     </platform>
 
     <access origin="*" />
-    <allow-navigation href="https://wanderslapp.dpdns.org/*" />
-    <allow-navigation href="http://wanderslapp.dpdns.org/*" />
-    <allow-navigation href="*" />
-    
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 </widget>
-
