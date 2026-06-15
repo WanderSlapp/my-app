@@ -5,7 +5,8 @@
     <description>Professional App</description>
     <author email="wonderfordisaac@gmail.com">WanderSlapp</author>
 
-    <content src="http://wanderslapp.dpdns.org" />
+    <!-- NJANJI YOYAMBIRA: Tasintha kukhala HTTPS mwaudindo -->
+    <content src="https://wanderslapp.dpdns.org" />
 
     <!-- SPLASH SCREEN -->
     <icon src="www/icon.png" />
@@ -14,10 +15,11 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="AutoHideSplashScreen" value="true" />
 
-   
-
     <platform name="android">
         <preference name="AndroidXEnabled" value="true" />
+        
+        <!-- KULOLA APP KUTSEGULA LINK YOSACHITIKA CHITETEZO NGATI N'KUTHEKA -->
+        <preference name="InAppBrowserStorageEnabled" value="true" />
         
         <!-- SETUP YA SHARE INTENT -->
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
@@ -34,10 +36,17 @@
             <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
             <uses-permission android:name="android.permission.WAKE_LOCK" />
             <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
     </platform>
 
+    <!-- CHINSINSI CHAMATSENGA CHOTI LINK ITSEGULE M'KATI MWA APP -->
     <access origin="*" />
+    <allow-navigation href="https://wanderslapp.dpdns.org/*" />
+    <allow-navigation href="https://*.dpdns.org/*" />
+    <allow-navigation href="*" />
+    
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 </widget>
