@@ -1,0 +1,41 @@
+name: Build Android APK
+on: [push]
+
+# Izi zithandiza kuchotsa uthenga wochenjeza wa Node.js 20 uja
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install Cordova
+        run: npm install -g cordova
+
+      - name: Prepare Cordova Project
+        run: |
+          cordova platform add android
+          
+      - name: Build Android APK
+        run: cordova build android --debug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-app-apk
+          path: platforms/android/app/build/outputs/apk/debug/app-debug.apk
