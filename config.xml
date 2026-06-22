@@ -1,11 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.wanderslapp.myapp" version="5.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android">
+<widget id="com.wanderslapp.myapp" version="5.3.5" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android">
     
     <name>WanderSlapp pro</name>
     <description>Professional App</description>
     <author email="wonderfordisaac@gmail.com">WanderSlapp</author>
 
-    <!-- NJANJI YOYAMBIRA -->
     <content src="https://wanderslapp.dpdns.org" />
 
     <icon src="www/icon.png" />
@@ -17,12 +16,10 @@
     <platform name="android">
         <preference name="AndroidXEnabled" value="true" />
         
-        <!-- KUKANTHA CHITETEZO CHA ANDROID KUTI ILOLE CLEAR TEXT (HTTP) MWAUFUMU -->
-        <edit-config target="/manifest/application" mode="merge" xmlns:android="http://schemas.android.com/apk/res/android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <application android:usesCleartextTraffic="true" />
-        </edit-config>
+        </config-file>
         
-        <!-- SETUP YA SHARE INTENT -->
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -32,7 +29,6 @@
             </intent-filter>
         </config-file>
 
-        <!-- PERMISSIONS -->
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
             <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -42,8 +38,8 @@
         </config-file>
     </platform>
 
-    <!-- KULOLA LINK KUTSEGULA M'KATI MWA APP -->
     <access origin="*" />
+    <allow-navigation href="https://*.dpdns.org/*" />
     <allow-navigation href="https://wanderslapp.dpdns.org/*" />
     <allow-navigation href="http://wanderslapp.dpdns.org/*" />
     <allow-navigation href="*" />
