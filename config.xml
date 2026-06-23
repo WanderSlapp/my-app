@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.wanderslapp.myapp" version="5.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android">
+<widget id="com.wanderslapp.myapp" version="5.0.8" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android">
     
     <name>WanderSlapp pro</name>
     <description>Professional App</description>
@@ -17,6 +17,10 @@
 
     <platform name="android">
         <preference name="AndroidXEnabled" value="true" />
+        
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="" />
+        <preference name="AndroidWindowSplashScreenBackground" value="#FFFFFF" />
+        <preference name="AndroidWindowSplashScreenDuration" value="0" />
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
             <intent-filter>
@@ -45,4 +49,3 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 </widget>
-
